@@ -10,10 +10,12 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     //public void alterartexto(View view) {
@@ -25,17 +27,17 @@ public class MainActivity extends AppCompatActivity {
 
     //}
 
-    TextView Textnumero1 = (TextView) findViewById(R.id.numero1);
-    int numero1 = Integer.parseInt(Textnumero1.getText().toString());
-
-    TextView Textnumero2 = (TextView) findViewById(R.id.numero2);
-    int numero2 = Integer.parseInt(Textnumero2.getText().toString());
-
-
-    Random aleatorio = new Random();
-    int randon = aleatorio.nextInt(numero2) + numero1;
-
     public void gerar(View view) {
+
+        TextView Textnumero1 = (TextView) findViewById(R.id.numero1);
+        int numero1 = Integer.parseInt(Textnumero1.getText().toString());
+
+        TextView Textnumero2 = (TextView) findViewById(R.id.numero2);
+        int numero2 = Integer.parseInt(Textnumero2.getText().toString());
+
+
+        Random aleatorio = new Random();
+        int randon = aleatorio.nextInt(numero2) + numero1;
 
         TextView sorteio = (TextView) findViewById(R.id.sorteio);
 
