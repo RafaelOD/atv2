@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             sorteio.setText(Integer.toString(result));
             result = 0;
         }
-
+ 
 
     }
 
