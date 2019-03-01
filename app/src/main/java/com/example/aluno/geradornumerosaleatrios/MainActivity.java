@@ -9,13 +9,18 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-
+    TextView Textnumero1;
+    TextView Textnumero2;
+    TextView sorteio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Textnumero1 = (TextView) findViewById(R.id.numero1);
+        Textnumero2 = (TextView) findViewById(R.id.numero2);
+        sorteio = (TextView) findViewById(R.id.sorteio);
     }
 
     //public void alterartexto(View view) {
@@ -28,20 +33,32 @@ public class MainActivity extends AppCompatActivity {
     //}
 
     public void gerar(View view) {
-
-        TextView Textnumero1 = (TextView) findViewById(R.id.numero1);
-        int numero1 = Integer.parseInt(Textnumero1.getText().toString());
-
-        TextView Textnumero2 = (TextView) findViewById(R.id.numero2);
-        int numero2 = Integer.parseInt(Textnumero2.getText().toString());
+        int result=0;
 
 
-        Random aleatorio = new Random();
-        int randon = aleatorio.nextInt(numero2) + numero1;
 
-        TextView sorteio = (TextView) findViewById(R.id.sorteio);
 
-        sorteio.setText(Integer.toString(randon));
+        if(!Textnumero1.getText().toString().contentEquals("")){
+            int numero1 = Integer.parseInt(Textnumero1.getText().toString());
+            result = numero1 + 273;
+            sorteio.setText(Integer.toString(result));
+            result = 0;
+
+        }else if(!Textnumero2.getText().toString().contentEquals("")){
+            int numero2 = Integer.parseInt(Textnumero2.getText().toString());
+            result = (numero2 * (9/5)) + 32;
+            sorteio.setText(Integer.toString(result));
+            result = 0;
+        }
+
+
+    }
+
+
+    public void Limpar(View view) {
+        sorteio.setText("Resultado");
+        Textnumero1.setText("");
+        Textnumero2.setText("");
 
 
     }
